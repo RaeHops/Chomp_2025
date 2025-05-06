@@ -56,40 +56,43 @@ public class Boards {
 
     public void OneMove() {
         int x = 3;
-        int y = 2;
-        int z = 1;
+        int y = 3;
+        int z = 3;
 
-if(z>0) {
-    for (int i = 1; i >= 0; i--) {
-
-
-        System.out.println(x + ", " + y + ", " + i);
+        if (z > 0) {
+            for (int i = 3; i >= 0; i--) {
 
 
-    }
-}
-if(y>0) {
-    for (y = 2; y >= 0; y--) {
-        if (y <= z) {
-            z = y;
-        } else {
+                System.out.println(x + ", " + y + ", " + i);
+
+
+            }
         }
-        System.out.println(x + ", " + y + ", " + z);
+        if (y > 0) {
+            for (int i = 3; i >= 0; i--) {
+                if (i <= z) {
+                    System.out.println(x + ", " + i + ", " + i);
+                } else {
+                    System.out.println(x + ", " + i + ", " + z);
+                }
 
-    }
-}
-        int y = 2;
-        int z = 1;
-        for (x = 3; x>=0; x--){
-            if (x <= y){
-                y = x;
-            } else{}
-            if (x <= z){
-                z = x;
-            } else{}
-            System.out.println(x+", " + y + ", " +z);
+
+            }
         }
+        if (x > 0) {
+            for (int i = 3; i >= 0; i--) {
+                if (i <= y && z<i) {
+                    System.out.println(i + ", " + i + ", " + z );
+                } else if (i <= y && i <= z) {
+                    System.out.println(i + ", " + i + ", " + i );
+                } else {
+                    System.out.println(i + ", " + y + ", " + z );
+                }
 
 
+            }
+
+
+        }
     }
 }
