@@ -139,5 +139,7 @@ public ArrayList<Board> loserBoards;
     }
     //then print all the loser boards
 
-
+/** what im confused about is: why do you say "create a loop that loops through loser boards" if im not storing any of the losing boards?
+    // also, take 333 for example. That's a winning board, but you cant get to 100 in one move.
+ **/
 }
