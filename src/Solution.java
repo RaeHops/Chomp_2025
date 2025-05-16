@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Solution {
 
 public Board exampleBoard;
-public boolean WinningBoard;
-public ArrayList<Board> loserBoards;
+public boolean FoundWinningBoard = false;
+public ArrayList<Board> loserBoards = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -16,10 +16,11 @@ public ArrayList<Board> loserBoards;
     }
 
     public Solution() {
-        OneMove();
+        loserBoards.add(new Board(1, 0, 0));
+
+        OneMove(3,0,0);
        // exampleBoard = new Board(3,2,1);
 
-        loserBoards.add(new Board(1, 0, 0));
 
 //        System.out.println("" +
 //                "" +
@@ -61,10 +62,12 @@ public ArrayList<Board> loserBoards;
 //        System.out.println("");
 //    }
 
-    public void OneMove() {
-        int x = 3;
-        int y = 0;
-        int z = 0;
+    public void OneMove(int a, int b, int c) {
+       FoundWinningBoard = false;
+
+        int x = a;
+        int y = b;
+        int z = c;
 
         if (z > 0) {
             for (int i = 3; i >= 0; i--) {
@@ -72,16 +75,16 @@ public ArrayList<Board> loserBoards;
 
                 System.out.println(x + ", " + y + ", " + i);
 
-                if (x == 1 && y == 0 && i == 0) {
+                if (x == loserBoards.get(0).dots[0] && y == loserBoards.get(0).dots[1] && i == loserBoards.get(0).dots[2]) {
                     //create a loop that loops thrugh your loser boards
                     //check for each loser board if x == a and if y== b and if i == c
                     //if so, then the board is a winning board and we don't need to do anything yet.
                     //if not, then proceced.
-                    System.out.println("yay, winning board");
-                    WinningBoard = true;
+                    System.out.println("yay, this original board is a winning board");
+                    FoundWinningBoard = true;
                 } else{
-                    System.out.println("no winning board");
-                    WinningBoard = false;
+                    System.out.println("this is not a winning board");
+
 
                 }
 
@@ -95,16 +98,16 @@ public ArrayList<Board> loserBoards;
                     System.out.println(x + ", " + i + ", " + z);
                 }
 
-                if (x == 1 && i == 0) {
+                if (x == loserBoards.get(0).dots[0]  && i == loserBoards.get(0).dots[1] ) {
                     //create a loop that loops thrugh your loser boards
                     //check for each loser board if x == a and if y== b and if i == c
                     //if so, then the board is a winning board and we don't need to do anything yet.
                     //if not, then proceced.
                     System.out.println("100 is there");
-                    WinningBoard = true;
+                    FoundWinningBoard = true;
                 } else{
                     System.out.println("100 is not there");
-                    WinningBoard = false;
+
 
                 }
 
@@ -120,6 +123,7 @@ public ArrayList<Board> loserBoards;
                     System.out.println(i + ", " + i + ", " + i );
                 } else {
                     System.out.println(i + ", " + y + ", " + z );
+
                 }
 
 
@@ -127,12 +131,13 @@ public ArrayList<Board> loserBoards;
 
 
         }
-        if (WinningBoard = false){
+        System.out.println("x" + x + " y " + y + "z " + z);
+        if (FoundWinningBoard == false){
 
             loserBoards.add(new Board(x, y, z));
-            System.out.println("loser");
+            System.out.println(" we added this og board to the loser list");
         }else{
-            System.out.println("winner");
+            System.out.println("this og board is a winner");
         }
         //suppose you never find a losing board "match" after all of this.
         //add the board x, y, z to the loserBoards list
