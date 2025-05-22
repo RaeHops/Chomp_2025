@@ -9,5 +9,10 @@ public class Board {
         dots[2]=c;
 
     }
+    public void printInfo(){
+        System.out.println("A="+ dots[0] + "B=" + dots[1] + "C=" + dots[2]);
+
+
+    }
 
 }

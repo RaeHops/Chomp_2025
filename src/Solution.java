@@ -89,15 +89,18 @@ public ArrayList<Board> loserBoards = new ArrayList<>();
                 System.out.println(x + ", " + y + ", " + i);
 
                 for(int d=0;d<loserBoards.size();d++) {
-                    if (x == loserBoards.get(d).dots[0] && y == loserBoards.get(0).dots[1] && i == loserBoards.get(0).dots[2]) {
+                    System.out.print("Base Case A =");
+                    loserBoards.get(d).printInfo();
+
+                    if (x == loserBoards.get(d).dots[0] && y == loserBoards.get(d).dots[1] && i == loserBoards.get(d).dots[2]) {
                         //create a loop that loops thrugh your loser boards
                         //check for each loser board if x == a and if y== b and if i == c
                         //if so, then the board is a winning board and we don't need to do anything yet.
                         //if not, then proceced.
-                        System.out.println("WINNER, FOUND BASE BOARD");
+                        System.out.println("WINNER, FOUND BASE BOARD - LOOP A");
                         FoundWinningBoard = true;
                     } else {
-                        System.out.println("LOSER, DID NOT FIND BASE BOARD");
+                        System.out.println("LOSER, DID NOT FIND BASE BOARD - LOOP A");
 
 
                     }
@@ -113,15 +116,18 @@ public ArrayList<Board> loserBoards = new ArrayList<>();
                     System.out.println(x + ", " + i + ", " + z);
                 }
                 for(int d=0;d<loserBoards.size();d++) {
-                    if (x == loserBoards.get(d).dots[0] && i == loserBoards.get(0).dots[1]) {
+                    System.out.print("Base Case B=");
+                    loserBoards.get(d).printInfo();
+
+                    if (x == loserBoards.get(d).dots[0] && i == loserBoards.get(d).dots[1] && z == loserBoards.get(d).dots[2]) {
                         //create a loop that loops thrugh your loser boards
                         //check for each loser board if x == a and if y== b and if i == c
                         //if so, then the board is a winning board and we don't need to do anything yet.
                         //if not, then proceced.
-                        System.out.println("WINNER, FOUND BASE BOARD");
+                        System.out.println("WINNER, FOUND BASE BOARD - LOOP B");
                         FoundWinningBoard = true;
                     } else {
-                        System.out.println("LOSER, DID NOT FIND BASE BOARD");
+                        System.out.println("LOSER, DID NOT FIND BASE BOARD - LOOP B");
 
 
                     }
@@ -142,16 +148,18 @@ public ArrayList<Board> loserBoards = new ArrayList<>();
 
                 }
                 for(int d=0;d<loserBoards.size();d++) {
-                    if (i == loserBoards.get(d).dots[0] && y == loserBoards.get(0).dots[1] && z == loserBoards.get(0).dots[2]) {
+                    System.out.print("Base Case C=");
+                    loserBoards.get(d).printInfo();
+                    if (i == loserBoards.get(d).dots[0] && y == loserBoards.get(d).dots[1] && z == loserBoards.get(d).dots[2]) {
                         //create a loop that loops thrugh your loser boards
                         //check for each loser board if x == a and if y== b and if i == c
                         //if so, then the board is a winning board and we don't need to do anything yet.
                         //if not, then proceced.
 
-                        System.out.println("WINNER, FOUND BASE BOARD");
+                        System.out.println("WINNER, FOUND BASE BOARD - LOOP C");
                         FoundWinningBoard = true;
                     } else {
-                        System.out.println("LOSER, DID NOT FIND BASE BOARD");
+                        System.out.println("LOSER, DID NOT FIND BASE BOARD - LOOP C");
 
 
                     }
